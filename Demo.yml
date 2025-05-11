@@ -1,0 +1,15 @@
+---
+- name: To create abc.txt file
+  hosts: localhost
+  become: true
+  tasks:
+    - name: to create a file
+      file:
+        path: /tmp/abc.txt
+        state: touch
+        mode: '0644'
+
+    - name: to display a message
+      debug:
+        msg: "One file is created on tmp directory named abc.txt"
+        
